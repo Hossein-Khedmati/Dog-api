@@ -11,7 +11,7 @@ function fetchDogImage() {
   loading.style.display = "block";
   image.style.display = "none";
   errorText.style.display = "none";
-  fetch("https://dog.ceo/api/brees/image/random")
+  fetch("https://dog.ceo/api/breeds/image/random")
     .then((response) => {
       // check the status code for errors
       if (response.status < 200 || response.status > 300) {
@@ -50,4 +50,5 @@ function loadSavedImage() {
 }
 window.addEventListener("load", loadSavedImage);
 btn.addEventListener("click", fetchDogImage);
+
 
