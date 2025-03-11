@@ -39,5 +39,15 @@ function fetchDogImage() {
     })
     .finally(() => (btn.disabled = false));  
 }
+function loadSavedImage() {
+  const savedImageUrl = localStorage.getItem("api");
+  if (savedImageUrl) {
+    image.src = savedImageUrl;
+    image.style.display = "block";
+  } else {
+    fetchDogImage();
+  }
+}
+window.addEventListener("load", loadSavedImage);
 btn.addEventListener("click", fetchDogImage);
-image.src=localStorage.getItem("api")
+
